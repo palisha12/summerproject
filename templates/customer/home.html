@@ -1,0 +1,602 @@
+{%extends 'main.html'%}
+{%include 'navbar.html'%}
+
+ {% block cotent %}
+ {% load static %}
+    <link rel='stylesheet' href="{% static 'templates/style.css' %}">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-BmbxuPwQa2lc/FVzBcNJ7UAyJxM6wuqIj61tLrc4wSX0szH/Ev+nYRRuWlolflfl" crossorigin="anonymous">
+    
+</head>
+ <style>
+    html{
+    scroll-behavior: smooth;   
+}
+body{
+    margin: 0;
+    padding: 0  ;
+    font-family: Arial;
+}
+nav{
+    width: 100%;
+    background: #262626;
+    overflow:  hidden;
+    position: fixed;
+    top: 0;
+    height: 75px;
+    padding:0;
+    margin:0;
+
+
+}
+ul{
+    padding: 0;
+    margin: 0;
+    list-style: none;
+}
+li{
+    float:left;
+}
+a{
+    padding: 25px;
+    width: 230px;
+    display: block;
+    text-decoration: none;
+    color: #fff;
+    text-transform: uppercase;
+    font-weight: bold;
+}
+#section1{
+    height: 800px;
+   background:white;
+    display: inline-block;
+    width: 100%;
+}
+#section4{
+    height: 700px;
+    background: white;
+    display: inline-block;
+    width: 100%;
+}
+#section2{
+    height: 1000px;
+    background: white;
+    display: inline-block;
+    width: 100%;
+}
+#section3{
+    height: 800px;
+    background: white;
+    display: inline-block;
+    width: 100%;
+}
+h1{
+    margin: 100px;
+    text-align: center;
+    padding: 0;
+}
+#img{
+    
+    height:590px ;
+    width:100%;
+    margin-left: auto;
+    margin-right: auto;
+    display:block;
+    margin-top: 95px;
+}
+.image__overlay{
+    position:absolute;
+    top:102px;
+    left:0;
+    width:100%;
+    height:82%;
+    background:rgba(0,0,0,0.4);
+    color:#ffffff;
+    font-family:'Quicksand', sans-serif;
+    display:flex;
+    flex-direction:column;
+    align-items:center;
+    justify-content:center;
+    font-size: xx-large;
+    opacity:0;
+}
+.image__overlay:hover{
+    opacity:0.2;
+}
+
+ #img1{
+    
+    height: 400px;
+    width:500px;
+   position:static;
+   margin-right:0;
+   padding:0;
+    float: left;
+} 
+.container1{
+    width:50%;
+    margin: 220px auto;
+    margin-right: 600px;
+    
+   
+    }  
+    .ctitle{
+        text-align:justify;
+        position:absolute;
+        left:700px;
+        font-size: xx-large;
+        font-weight: bold;
+    }
+    .content1{
+        text-align:justify;
+        position:absolute;
+        left:700px;
+        font-size: large;
+        width: 600px;
+    }
+    #img2{
+        height: 50%;
+    width:500px;
+   position:absolute;
+   margin-right:0;
+   padding:0;
+    float: left;
+    align-self: center;
+    margin-top: 100px;
+    left:450px;
+    }
+    .containerinfo{
+      background-color: cadetblue;
+      width:500px;
+      height:500px;
+      margin-top: 100px;
+      margin-left: 500px;
+    }
+    #contact .card:hover i,#contact .card:hover h4{
+	color: #87d37c;
+    
+}
+.row{
+    position: absolute;
+    left: 550px;
+  }
+  .container{
+      margin-top: 225px;
+  }
+  .title{
+      margin-top: 100px;
+      margin-left: 580px;
+      font-size: xx-large;
+  }
+.form1{
+      margin-top: 20px;
+      margin-left: 330px;
+      padding:10px 20px;
+      width:1000px;
+      height:120%;
+      }
+      .div2 {
+                  width: 800px;
+                  height: 550px;  
+                  padding: 50px;
+                  border: 1px solid grey;
+                  
+                }
+                #img5{
+                 left: 300px;
+                    height: 103%;
+                    width:325px;      
+                   position:static;
+                    margin-right:40px;
+                    padding:0;
+                    float: left;  
+                    display: block; 
+                    
+                }
+                .button {
+  background-color: #4CAF50; /* Green */
+  border: none;
+  color: white;
+  padding: 8px 16px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  margin: 2px 2px;
+  transition-duration: 0.4s;
+  cursor: pointer;
+  
+}
+
+.button1 {
+  background-color: white; 
+  color: black; 
+  border: 2px solid #4CAF50;
+}
+
+.button1:hover {
+  background-color: #4CAF50;
+  color: white;
+}
+label {
+    display: block;
+    font: 1rem 'Fira Sans', sans-serif;
+}
+
+input,
+label {
+    margin: .4rem 0;
+    
+    
+}
+.staff{
+    font: 1rem 'Fira Sans', sans-serif;
+    margin-bottom: 12px;
+}                
+slideshow-container {
+    max-width: 1100px;
+    
+    position: static;
+    margin: 0px;
+    background-size: cover;
+  }
+  
+  /* Hide the images by default */
+  .mySlides {
+    display: none;
+    background-size: cover;
+    
+  }
+  .mySlides img{
+      background-size: cover;
+      height: 625px;
+      width: 1500px;
+      margin-top: 30px;
+      margin-bottom: 0%;
+  }
+
+  
+  /* Next & previous buttons */
+  .prev, .next {
+    cursor: pointer;
+    position: static;
+    top: 50%;
+    width: auto;
+    margin-top: -22px;
+    padding: 16px;
+    color: white;
+    font-weight: bold;
+    font-size: 18px;
+    transition: 0.6s ease;
+    border-radius: 0 3px 3px 0;
+    user-select: none;
+  }
+  
+  /* Position the "next button" to the right */
+  .next {
+    right: 0;
+    border-radius: 3px 0 0 3px;
+  }
+  
+  /* On hover, add a black background color with a little bit see-through */
+  .prev:hover, .next:hover {
+    background-color: rgba(0,0,0,0.8);
+  }
+  
+ 
+  
+  /* Number text (1/3 etc) */
+  .numbertext {
+    color: #f2f2f2;
+    font-size: 12px;
+    padding: 8px 12px;
+    position: absolute;
+    top: 0;
+  }
+  
+  /* The dots/bullets/indicators */
+  .dot {
+    cursor: pointer;
+    height: 15px;
+    width: 15px;
+    margin: 5px 10px;
+    background-color: white;
+    border-radius: 50%;
+    display: inline-block;
+    transition: background-color 0.4s ease;
+    
+  }
+  
+  .active, .dot:hover {
+    background-color:white;
+  }
+  
+  /* Fading animation */
+  .fade {
+    -webkit-animation-name: fade;
+    -webkit-animation-duration: 4s;
+    animation-name: fade;
+    animation-duration: 4s;
+  }
+  
+  @-webkit-keyframes fade {
+    from {opacity: .4}
+    to {opacity: 1}
+  }
+  
+  @keyframes fade {
+    from {opacity: .4}
+    to {opacity: 1}
+  }
+  
+                
+     
+
+</style>
+<link href="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+<script src="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+<script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
+<!------ Include the above in your HEAD tag ---------->
+
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/css/bootstrap.min.css" integrity="sha384-/Y6pD6FV/Vv2HJnA6t+vslU6fwYXjCFtcEpHbNJ0lyAFsXTsjBbfaDjzALeQsN6M" crossorigin="anonymous">
+<link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-T8Gy5hrqNKT+hzMclPo118YTQO6cYprQmhrYwIiQ/3axmI1hQomh7Ud2hPOy8SP1" crossorigin="anonymous">
+
+<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+             <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.11.0/umd/popper.min.js" integrity="sha384-b/U6ypiBEHpOf/4+1nzFpr53nxSS+GLCkfwBdFNTxtclqqenISfwAzpKaMNFNmj4" crossorigin="anonymous"></script>
+             <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/js/bootstrap.min.js" integrity="sha384-h0AbiXch4ZDo7tp9hKZ4TsHbi047NrKGLO3SEJAg45jXxnGIfYzk4Si90RDIqNm1" crossorigin="anonymous"></script>
+          
+            
+    
+    <body>
+
+        
+        <div id="section1">
+
+          <!----<div class="image">
+                <img src="{% static 'image/main5.jpg'%}" alt=""  id="img" style="opacity: 0.2">
+               
+    
+    
+             <div class="image__overlay">
+                 
+              
+
+        
+        <p class="image__description" >
+            Welcome to New Look
+        </p>-->
+
+                 
+                 <header class="hero flex ">
+            
+                    <section class="top-products">
+    
+                        <div class="slideshow-container">
+    
+                            <!-- Full-width images with number and caption text -->
+                            <div class="mySlides fade">
+                              <img src="{% static 'image/main5.jpg'%}" style="width:100%">
+                              
+                            </div>
+                          
+                            <div class="mySlides fade">
+                              <img src="{% static 'image/slide2.jpg'%}" style="width:100%">
+                              
+                            </div>
+                          
+                            <div class="mySlides fade">
+                              <img src="{% static 'image/slide3.jpg'%}" style="width:100%">
+                              
+                            </div>
+    
+                            <div class="mySlides fade">
+                                <img src="{% static 'image/main1.jpg'%}" style="width:100%">
+                                
+                              </div>
+    
+                              <div class="mySlides fade">
+                                <img src="{% static 'image/slide5.jpg'%}" style="width:100%">
+                                
+                              </div>
+                              <div class="mySlides fade">
+                                <img src="{% static 'image/main2.jpg'%}" style="width:100%">
+                                
+                              </div>
+    
+                          
+                            <!-- Next and previous buttons -->
+                            <!-- <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
+                            <a class="next" onclick="plusSlides(1)">&#10095;</a> -->
+                          </div>
+                          <br>
+                          
+                          <!-- The dots/circles -->
+                          <div style="text-align:center">
+                            <span class="dot" onclick="currentSlide(1)"></span>
+                            <span class="dot" onclick="currentSlide(2)"></span>
+                            <span class="dot" onclick="currentSlide(3)"></span>
+                            <span class="dot" onclick="currentSlide(4)"></span>
+                            <span class="dot" onclick="currentSlide(5)"></span>
+                            <span class="dot" onclick="currentSlide(6)"></span>
+    
+                          </div>
+                        
+                        <script>
+                        var slideIndex = 0;
+                        showSlides();
+                        z
+                        function showSlides() {
+                          var i;
+                          var slides = document.getElementsByClassName("mySlides");
+                          var dots = document.getElementsByClassName("dot");
+                          for (i = 0; i < slides.length; i++) {
+                            slides[i].style.display = "none";  
+                          }
+                          slideIndex++;
+                          if (slideIndex > slides.length) {slideIndex = 1}    
+                          for (i = 0; i < dots.length; i++) {
+                            dots[i].className = dots[i].className.replace(" active", "");
+                          }
+                          slides[slideIndex-1].style.display = "block";  
+                          dots[slideIndex-1].className += " active";
+                          setTimeout(showSlides, 3000); // Change image every 3 seconds
+                        }
+                        </script>
+                    </div>
+                </section>
+            </header>
+    
+             <!-- </div> -->
+            <!-- </div> -->
+        <!-- </div> -->
+        <br>
+        <div id="section4">
+            
+        <div class="container1">
+            <img src="{% static 'image/main.jpg'%}" alt=""  id="img1">
+           <div class="ctitle">About Us</div></br></br></br>
+            <div class="content1">
+                <p>New Look is the salon which represents the beauty which has been serving the clients from 10 years. It is located in Dallu, Kathmandu. Though unquestionable honesty, openness, fairness and respect, they strive to earn full trust and loyalty from each of the clients ,who will soon come to know and appreciate what they serve the clients with the best in the hair and beauty industry. Most of the product they use are imported from USA, Korea, China and other countries while they use hand-picked high quality Nepalese product as well. They assure for high quality service.</p>
+            </div>
+        </div>
+         </div>
+        </div>
+        </div>
+  <div id="section2">
+            <div class="title"><b>Make An Appointment</b></div>
+            {% for message in messages%}
+            <script>
+              alert('{{ message }}');
+          </script>
+                   
+            {% endfor%}
+            <form method="post" action="/submitted">
+                {% csrf_token %}
+                <div class="form1">
+                        
+            Name: <input type="text" name="name"  />&nbsp;&nbsp;
+           E-mail: <input type="text" name="email"  />&nbsp;&nbsp;
+            Mobile No: <input type="number" name="number" ><br><br><br>
+            <div class="div2"> 
+                <img src="{% static 'image/main3.jpg'%}" alt=""  id="img5">
+            <input type="checkbox" id="vehicle1" name="salon" value="30">
+            <label for="vehicle1"> Hair Cut</label><br><br>
+            <input type="checkbox" id="vehicle1" name="salon" value="90">
+            <label for="vehicle1"> Hair Colour</label><br><br>
+            <input type="checkbox" id="vehicle1" name="salon" value="89">
+            <label for="salon"> Facial</label><br><br>
+            <input type="checkbox" id="salon" name="salon" value="15">
+            <label for="salon"> Threading</label><br><br>
+            <input type="checkbox" id="salon" name="salon" value="29">
+            <label for="salon"> Nail Care</label><br><br>
+            <input type="checkbox" id="salon" name="salon" value="60">
+            <label for="salon"> Makeup</label><br><br>
+            <input type="checkbox" id="salon" name="salon" value="28">
+            <label for="salon"> Mehendi</label><br><br>
+            <input type="checkbox" id="salon" name="salon" value="40">
+            <label for="salon"> Waxing</label><br><br>
+            <input type="checkbox" id="salon" name="salon" value="45">
+            <label for="salon"> Oil Massage</label><br><br>
+                
+                
+                </div><br>
+                <div class="staff">
+                 Choose a staff:<select name="staff"><br>
+                            <option value="rita">rita</option>
+                            <option value="sita">sita</option>
+                            <option value="gita">gita</option>
+                    </select>&nbsp;&nbsp;
+                </div>
+                <div class="submit1">
+
+                
+                    <label for="appt"><span>Choose a time for your appointment:</span></label>
+
+                    <input type="time" id="appt" name="appt"
+                           min="09:00" max="18:00" required>
+                    
+                <style media="screen">
+                    .form-question {
+                      display: flex;
+                      flex-direction: column;
+                      justify-content: center;
+                      margin: 0 0 3rem;
+                      min-height: 3rem;
+                    }
+                    .form-question__title {
+                      color: #342357;
+                      font: 1rem 'Fira Sans', sans-serif;
+                      padding: 0rem;
+                    }
+                    .input-container {
+                      border-bottom: solid 2px #333333;
+                      width:50%;
+                    }
+                    .input-container input {
+                      border: none;
+                      box-sizing: border-box;
+                      outline: 0;
+                      padding: .75rem;
+                      width: 100%;
+                    }
+                    </style><br><br>
+                    <div class="form-question">
+                      <div class="form-question__title">
+                          <span>Choose a date:</span>
+                        </div>
+                        <div class="input-container">
+                          <input id="effective-date" type="date" name="effective-date" minlength="1" maxlength="64" placeholder=" " autocomplete="nope" required="required"></input>
+                          <span class="bar"></span>
+                        </div>
+                      </div>
+                <button class="button button1" type="submit">Submit</button> 
+            </div>
+            </div>
+            
+            </form>
+            
+        </div>
+        
+        
+        <div id="section3">
+            <!-- <img src="{% static 'image/main4.jpg'%}" alt=""  id="img2">  -->
+            <section id="contact">
+                <div class="container">
+                    <h3 class="text-center text-uppercase">contact us</h3>
+                    <p class="text-center w-75 m-auto">We are serving you from 10Am to 6Pm.</p>
+                    <div class="row">
+                      <div class="col-sm-12 col-md-6 col-lg-3 my-5">
+                        <div class="card border-0">
+                           <div class="card-body text-center">
+                             <i class="fa fa-phone fa-5x mb-3" aria-hidden="true"></i>
+                             <h4 class="text-uppercase mb-5">call us</h4>
+                             <p>9888765432,01-42356</p>
+                           </div>
+                         </div>
+                      </div>
+                      <div class="col-sm-12 col-md-6 col-lg-3 my-5">
+                        <div class="card border-0">
+                           <div class="card-body text-center">
+                             <i class="fa fa-map-marker fa-5x mb-3" aria-hidden="true"></i>
+                             <h4 class="text-uppercase mb-5"> location</h4>
+                            <address>Dallu,Kathmandu</address>
+                           </div>
+                         </div>
+                      </div>
+                      
+                      <div class="col-sm-12 col-md-6 col-lg-3 my-5">
+                        <div class="card border-0">
+                           <div class="card-body text-center">
+                             <i class="fa fa-globe fa-5x mb-3" aria-hidden="true"></i>
+                             <h4 class="text-uppercase mb-5">email</h4>
+                             <p>NewLook@gmail.com</p>
+                           </div>
+                         </div>
+                      </div>
+                    </div>
+                </div>
+             </section>
+             
+                </div>
+        </body>
+        </html>
+{% endblock %}
